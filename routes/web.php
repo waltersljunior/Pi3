@@ -19,6 +19,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('todos', 'TodosController@index');
+Route::get('todos/{todo}', 'TodosController@show');
+Route::get('todos/edit/{todo}', 'TodosController@edit');
 
-Route::get('/admin', 'AdmController@dashboard')->name('admin');
+// Route::get('/admin', 'AdmController@dashboard')->name('admin');

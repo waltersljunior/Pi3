@@ -2,11 +2,11 @@
 
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class TodosSeeder extends Seeder
 {
 
     public function run()
     {
-        $this->call(TodosSeeder::class);
+        factory(\App\Todo::class, 10)->create();
     }
 }
