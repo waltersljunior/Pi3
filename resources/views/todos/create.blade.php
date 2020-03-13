@@ -11,18 +11,18 @@
 
     <div class="container">
 
-        <h1 class="text-center my-5">Editar</h1>
-    <form action="/store-todo/{{$todo->id}}" method="post">
+        <h1 class="text-center my-5">Novo</h1>
+    <form action="newstore-todo" method="POST">
         @csrf
         <div class="form-group">
             <label for="formGroupExampleInput">Nome</label>
-            <input type="text" class="form-control" id="formGroupExampleInput" name="name" value="{{$todo->name}}">
+            <input type="text" class="form-control" id="formGroupExampleInput" name="name">
         </div>
         <div class="form-group">
             <label for="exampleFormControlTextarea1">Descrição</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" cols="5" rows="3" name="desc">{{$todo->name}}</textarea>
+            <textarea class="form-control" id="exampleFormControlTextarea1" cols="5" rows="3" name="desc"></textarea>
         </div>
-        <button class="btn btn-primary btn-sm float-right ml-1">Editar</button>
+        <button class="btn btn-primary btn-sm float-right ml-1">Criar</button>
         </form>
         <a href="/todos">Voltar</a>
     </div>

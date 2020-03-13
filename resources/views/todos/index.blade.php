@@ -12,12 +12,15 @@
         <h1 class="text-center my-5">lista todos</h1>
 
         <ul class="list-group">
+            <li class="list-group-item">
+                <a href="/new-todo" class="btn btn-success btn-sm float-right">+Novo</a>
+            </li>
             @foreach ($todos as $todo)
                 <li class="list-group-item">
                     <span>{{$todo->name}}</span>
                     <a href="/todos/{{$todo->id}}" class="btn btn-primary btn-sm float-right ml-1">Visualizar</a>
                     <a href="/todos/edit/{{$todo->id}}" class="btn btn-warning btn-sm float-right ml-1">Editar</a>
-                    <a href="#" class="btn btn-danger btn-sm float-right">Excluir</a>
+                <a href="/todos/{{$todo->id}}/delete" class="btn btn-danger btn-sm float-right ml-1">Excluir</a>
                 </li>
             @endforeach
         </ul>

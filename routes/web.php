@@ -22,5 +22,9 @@ Auth::routes();
 Route::get('todos', 'TodosController@index');
 Route::get('todos/{todo}', 'TodosController@show');
 Route::get('todos/edit/{todo}', 'TodosController@edit');
+Route::get('new-todo', 'TodosController@create');
+Route::post('newstore-todo', 'TodosController@newstore');
+Route::post('store-todo/{todo}', 'TodosController@store');
+Route::get('todos/{todo}/delete', 'TodosController@destroy');
 
 // Route::get('/admin', 'AdmController@dashboard')->name('admin');
