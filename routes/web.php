@@ -19,6 +19,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/logado', 'logadoController@index');
+Route::get('/nãologado', 'nãosimlogadoController@index');
+
 Route::get('todos', 'TodosController@index');
 Route::get('todos/{todo}', 'TodosController@show');
 Route::get('todos/edit/{todo}', 'TodosController@edit');
