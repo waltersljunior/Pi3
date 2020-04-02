@@ -72,8 +72,25 @@
             </div>
         </nav>
 
-        <main class="py-4">
-            @yield('content')
+        <main class="py-4 container">
+            @if(session()->has('success'))
+                <div class="alert alert-success">{{ session()->get('success')}}</div>
+            @endif
+            @auth
+            <div class="row">
+                <div class="col-md-2">
+                    <ul class="list-group">
+                        <li class="list-group-item"><a href="{{ route('produtos.index')}}">Produtos</a></li>
+                        <li class="list-group-item"><a href="{{ route('categories.index')}}">Categorias</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-10">
+                    @yield('content')
+                </div>
+            </div>
+            @else
+                @yield('content')
+            @endauth
         </main>
     </div>
 </body>

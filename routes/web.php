@@ -20,15 +20,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/logado', 'logadoController@index');
-Route::get('/nãologado', 'nãosimlogadoController@index');
-
-Route::get('todos', 'TodosController@index');
-Route::get('todos/{todo}', 'TodosController@show');
-Route::get('todos/edit/{todo}', 'TodosController@edit');
-Route::get('new-todo', 'TodosController@create');
-Route::post('newstore-todo', 'TodosController@newstore');
-Route::post('store-todo/{todo}', 'TodosController@store');
-Route::get('todos/{todo}/delete', 'TodosController@destroy');
+Route::resource('categories', 'categoriesController');
+Route::resource('produtos', 'produtosController');
 
 // Route::get('/admin', 'AdmController@dashboard')->name('admin');
